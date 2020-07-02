@@ -1,0 +1,21 @@
+{
+  "name": "projects/simple-d78f2385",
+  "displayName": "simple",
+  "buildScriptContent": "#!/bin/bash -eu\napt update\napt install -y build-essential \nmake",
+  "details": {
+    "buildSystem": "MAKE"
+  },
+  "location": {
+    "pullScript": {
+      "pullScriptContent": "git pull || git clone --depth=1 --recurse-submodules --shallow-submodules https://https://gitlab.com/WillRoque/simple.git . || exit 0"
+    }
+  },
+  "projectEnvironment": {
+    "dockerBuild": {
+      "name": "debian:stable"
+    },
+    "dockerRun": {
+      "name": "debian:stable"
+    }
+  }
+}

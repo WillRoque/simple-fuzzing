@@ -1,0 +1,11 @@
+{
+  "name": "do-nothing-81f8827c",
+  "displayName": "do-nothing",
+  "path": "do-nothing.cpp",
+  "buildFlags": [
+    ""
+  ],
+  "runArguments": [
+    ""
+  ]
+}

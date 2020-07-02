@@ -1,0 +1,21 @@
+{
+  "name": "do-nothing-d819566f",
+  "displayName": "do-nothing",
+  "maxRunTime": "60s",
+  "fuzzTargets": [
+    "do-nothing-81f8827c"
+  ],
+  "fuzzerRunConfigurations": [
+    {
+      "engine": "LIBFUZZER",
+      "sanitizer": "ADDRESS",
+      "numberOfJobs": 1,
+      "environment": [
+        ""
+      ],
+      "engineArguments": [
+        ""
+      ]
+    }
+  ]
+}
