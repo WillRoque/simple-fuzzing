@@ -7,7 +7,7 @@
   },
   "location": {
     "pullScript": {
-      "pullScriptContent": "git pull || git clone --depth=1 --recurse-submodules --shallow-submodules https://https://gitlab.com/WillRoque/simple.git . || exit 0"
+      "pullScriptContent": "git pull || git clone --depth=1 --recurse-submodules --shallow-submodules https://gitlab.com/WillRoque/simple . || exit 0"
     }
   },
   "projectEnvironment": {
