@@ -1,7 +1,7 @@
 {
   "name": "projects/simple-b7a08264",
   "displayName": "simple-fuzzing",
-  "buildScriptContent": "#!/bin/bash -eu\napt update\napt install -y build-essential \nmake",
+  "buildScriptContent": "make",
   "details": {
     "buildSystem": "MAKE"
   },
@@ -10,13 +10,13 @@
   },
   "projectEnvironment": {
     "dockerBuild": {
-      "name": "debian:stable",
+      "name": "sublimino/debian-build-essential:latest",
       "auth": {
 
       }
     },
     "dockerRun": {
-      "name": "debian:stable",
+      "name": "sublimino/debian-build-essential:latest",
       "auth": {
 
       }
