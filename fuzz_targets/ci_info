@@ -10,16 +10,10 @@
   },
   "projectEnvironment": {
     "dockerBuild": {
-      "name": "sublimino/debian-build-essential:latest",
-      "auth": {
-
-      }
+      "name": "macourteau/docker-jenkins-buildessential:latest"
     },
     "dockerRun": {
-      "name": "sublimino/debian-build-essential:latest",
-      "auth": {
-
-      }
+      "name": "macourteau/docker-jenkins-buildessential:latest"
     }
   }
 }
