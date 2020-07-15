@@ -1,9 +1,9 @@
 {
-  "name": "do-nothing-d819566f",
+  "name": "do-nothing-c52c8c05",
   "displayName": "do-nothing",
   "maxRunTime": "60s",
   "fuzzTargets": [
-    "do-nothing-81f8827c"
+    "do-nothing-45b2044a"
   ],
   "fuzzerRunConfigurations": [
     {

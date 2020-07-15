@@ -1,5 +1,5 @@
 {
-  "name": "do-nothing-81f8827c",
+  "name": "do-nothing-45b2044a",
   "displayName": "do-nothing",
   "path": "do-nothing.cpp",
   "buildFlags": [
@@ -7,5 +7,10 @@
   ],
   "runArguments": [
     ""
-  ]
+  ],
+  "cApi": {
+    "api": {
+      "relativePath": ".code-intelligence/fuzz_targets/do-nothing.cpp"
+    }
+  }
 }

@@ -1,21 +1,25 @@
 {
-  "name": "projects/simple-d78f2385",
-  "displayName": "simple",
+  "name": "projects/simple-b7a08264",
+  "displayName": "simple-fuzzing",
   "buildScriptContent": "#!/bin/bash -eu\napt update\napt install -y build-essential \nmake",
   "details": {
     "buildSystem": "MAKE"
   },
   "location": {
-    "pullScript": {
-      "pullScriptContent": "git pull || git clone --depth=1 --recurse-submodules --shallow-submodules https://gitlab.com/WillRoque/simple . || exit 0"
-    }
+    "localPath": "/home/willian/Projects/simple-fuzzing"
   },
   "projectEnvironment": {
     "dockerBuild": {
-      "name": "debian:stable"
+      "name": "debian:stable",
+      "auth": {
+
+      }
     },
     "dockerRun": {
-      "name": "debian:stable"
+      "name": "debian:stable",
+      "auth": {
+
+      }
     }
   }
 }
