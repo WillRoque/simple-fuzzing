@@ -1,0 +1,16 @@
+{
+  "name": "fuzz_api_DoStuff-03fbae84",
+  "displayName": "fuzz_api_DoStuff",
+  "path": "fuzz_api_DoStuff.cpp",
+  "buildFlags": [
+    "-I.",
+    "-lpthread",
+    "-lFuzzCIdo_stuff_unittest",
+    "-L."
+  ],
+  "cApi": {
+    "api": {
+      "relativePath": ".code-intelligence/fuzz_targets/fuzz_api_DoStuff.cpp"
+    }
+  }
+}
