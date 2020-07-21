@@ -32,12 +32,12 @@ jobs:
     steps:
     # Runs a single command using the runners shell
     - name: Log-in with Cognito
-      run: ls && ./cictl login -u "${COGNITO_USER}" -p "${COGNITO_PASSWORD}"
+      run: ls && ls /usr/bin && cictl login -u "${COGNITO_USER}" -p "${COGNITO_PASSWORD}"
 
     # Runs a set of commands using the runners shell
     - name: Start fuzzing and wait for a crash for 5 minutes
       run: |
-        ./cictl start_and_monitor_fuzzing
+        cictl start_and_monitor_fuzzing
         --daemon_listen_address="${FUZZER_DAEMON_ADDRESS}" \
         --project_name="${PROJECT_NAME}" \
         --campaign_name="${CAMPAIGN_NAME}" \
