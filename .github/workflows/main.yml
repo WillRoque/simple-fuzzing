@@ -31,7 +31,7 @@ jobs:
 
     # Runs a single command using the runners shell
     - name: Log-in with Cognito
-      run: ./cictl login -u "${COGNITO_USER}" -p "${COGNITO_PASSWORD}"
+      run: ls && ./cictl login -u "${COGNITO_USER}" -p "${COGNITO_PASSWORD}"
 
     # Runs a set of commands using the runners shell
     - name: Start fuzzing and wait for a crash for 5 minutes
