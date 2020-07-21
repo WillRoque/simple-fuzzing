@@ -1,5 +1,4 @@
 # This is a basic workflow to help you get started with Actions
-# Testing
 
 name: CI
 
@@ -22,7 +21,8 @@ jobs:
       REPORT_EMAIL: roque@code-intelligence.de
       
     # The type of runner that the job will run on
-    runs-on: cifuzz/cictl
+    runs-on: ubuntu-latest
+    container: cifuzz/cictl
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
