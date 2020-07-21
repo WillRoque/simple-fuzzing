@@ -20,6 +20,8 @@ jobs:
       PROJECT_NAME: simple-fuzzing
       CAMPAIGN_NAME: fuzz_api_DoStuff
       REPORT_EMAIL: roque@code-intelligence.de
+      COGNITO_USER: ${{ secrets.COGNITO_USER }}
+      COGNITO_PASSWORD: ${{ secrets.COGNITO_PASSWORD }}
 
     defaults:
       run:
