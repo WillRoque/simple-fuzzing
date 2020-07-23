@@ -18,22 +18,6 @@ env:
   REPORT_EMAIL: roque@code-intelligence.de
 
 jobs:
-#   fuzz_do-nothing:      
-#     runs-on: ubuntu-latest
-#     container: cifuzz/cictl
-    
-#     steps:
-#     - name: Log-in with Cognito
-#       run: cictl login -u "${COGNITO_USER}" -p "${COGNITO_PASSWORD}"
-
-#     - name: Start fuzzing and wait for a crash for 5 minutes
-#       run: |
-#         cictl start_and_monitor_fuzzing -d60 \
-#         --daemon_listen_address="${FUZZER_DAEMON_ADDRESS}" \
-#         --project_name="${PROJECT_NAME}" \
-#         --campaign_name="do-nothing" \
-#         --cloud_report_recipient_email="${REPORT_EMAIL}"
-
   fuzz_fuzz_api_DoStuff:      
     runs-on: ubuntu-latest
     container: cifuzz/cictl
@@ -44,7 +28,7 @@ jobs:
 
     - name: Start fuzzing and wait for a crash for 5 minutes
       run: |
-        cictl start_and_monitor_fuzzing -d60 \
+        cictl start_and_monitor_fuzzing \
         --daemon_listen_address="${FUZZER_DAEMON_ADDRESS}" \
         --project_name="${PROJECT_NAME}" \
         --campaign_name="fuzz_api_DoStuff" \
