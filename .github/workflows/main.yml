@@ -28,7 +28,7 @@ jobs:
 
     - name: Start fuzzing and wait for a crash for 5 minutes
       run: |
-        cictl start_and_monitor_fuzzing \
+        cictl start_and_monitor_fuzzing -d60 \
         --daemon_listen_address="${FUZZER_DAEMON_ADDRESS}" \
         --project_name="${PROJECT_NAME}" \
         --campaign_name="fuzz_api_DoStuff" \
