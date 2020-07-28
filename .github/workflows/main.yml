@@ -5,31 +5,23 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
-    
-defaults:
-  run:
-    working-directory: /
-    
+
 env:
   FUZZER_DAEMON_ADDRESS: grpc-api.cloud.code-intelligence.com:443
   PROJECT_NAME: simple-fuzzing
-  COGNITO_USER: ${{secrets.COGNITO_USER}}
-  COGNITO_PASSWORD: ${{secrets.COGNITO_PASSWORD}}
   REPORT_EMAIL: roque@code-intelligence.de
 
 jobs:
-  fuzz_fuzz_api_DoStuff:      
+  fuzz_fuzz_api_DoStuff:
     runs-on: ubuntu-latest
-    container: cifuzz/cictl
-    
     steps:
-    - name: Log-in with Cognito
-      run: cictl login -u "${COGNITO_USER}" -p "${COGNITO_PASSWORD}"
+      - name: Fuzz
+        uses: WillRoque/fuzzing-action/start-and-monitor-fuzzing@master
+        with:
+          cognito_user: ${{ secrets.COGNITO_USER }}
+          cognito_password: ${{ secrets.COGNITO_PASSWORD }}
+          project: ${{ env.PROJECT_NAME }}
+          test_collection: fuzz_api_DoStuff
+          report_email: ${{ env.REPORT_EMAIL }}
+          timeout: 60
 
-    - name: Start fuzzing and wait for a crash for 5 minutes
-      run: |
-        cictl start_and_monitor_fuzzing \
-        --daemon_listen_address="${FUZZER_DAEMON_ADDRESS}" \
-        --project_name="${PROJECT_NAME}" \
-        --campaign_name="fuzz_api_DoStuff" \
-        --cloud_report_recipient_email="${REPORT_EMAIL}"
