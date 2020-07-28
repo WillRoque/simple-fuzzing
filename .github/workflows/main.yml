@@ -32,4 +32,4 @@ jobs:
         --daemon_listen_address="${FUZZER_DAEMON_ADDRESS}" \
         --project_name="${PROJECT_NAME}" \
         --campaign_name="fuzz_api_DoStuff" \
-        --cloud_report_recipient_email="${REPORT_EMAIL}"
+        --report_email="${REPORT_EMAIL}"
