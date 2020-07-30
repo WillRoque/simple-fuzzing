@@ -15,7 +15,8 @@ jobs:
   fuzz_fuzz_api_DoStuff:
     runs-on: ubuntu-latest
     steps:
-      - name: start-fuzzing
+      - id: start-fuzzing
+        name: Start Fuzzing
         uses: WillRoque/fuzzing-action/start-fuzzing@master
         with:
           cognito_user: ${{ secrets.COGNITO_USER }}
@@ -23,7 +24,8 @@ jobs:
           project: ${{ env.PROJECT_NAME }}
           test_collection: fuzz_api_DoStuff
           report_email: ${{ env.REPORT_EMAIL }}
-      - name: monitor-fuzzing
+      - id: monitor-fuzzing
+        name: Monitor Fuzzing
         uses: WillRoque/fuzzing-action/monitor-fuzzing@master
         with:
           project: ${{ env.PROJECT_NAME }}
