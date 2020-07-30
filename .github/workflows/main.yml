@@ -5,14 +5,14 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
-
+    
 env:
   FUZZER_DAEMON_ADDRESS: grpc-api.cloud.code-intelligence.com:443
-  PROJECT_NAME: simple-fuzzing
+  PROJECT_NAME: simple-fuzzing  
   REPORT_EMAIL: roque@code-intelligence.de
-
+  
 jobs:
-  fuzz_fuzz_api_DoStuff:
+  fuzz_fuzz_api_DoStuff:      
     runs-on: ubuntu-latest
     steps:
       - id: start-fuzzing
@@ -22,7 +22,7 @@ jobs:
           cognito_user: ${{ secrets.COGNITO_USER }}
           cognito_password: ${{ secrets.COGNITO_PASSWORD }}
           project: ${{ env.PROJECT_NAME }}
-          test_collection: fuzz_api_DoStuff
+          test_collection: "fuzz_api_DoStuff"          
           report_email: ${{ env.REPORT_EMAIL }}
       - id: monitor-fuzzing
         name: Monitor Fuzzing
@@ -32,4 +32,4 @@ jobs:
           cognito_password: ${{ secrets.COGNITO_PASSWORD }}
           project: ${{ env.PROJECT_NAME }}
           test_collection_run: ${{ steps.start-fuzzing.outputs.test-collection-run }}
-          timeout: 60
+          
