@@ -17,19 +17,19 @@ jobs:
     steps:
       - id: start-fuzzing
         name: Start Fuzzing
-        uses: WillRoque/fuzzing-action/start-fuzzing@master
+        uses: CodeIntelligenceTesting/github-actions/start-fuzzing@master
         with:
-          cognito_user: ${{ secrets.COGNITO_USER }}
-          cognito_password: ${{ secrets.COGNITO_PASSWORD }}
+          cognito-user: ${{ secrets.COGNITO_USER }}
+          cognito-password: ${{ secrets.COGNITO_PASSWORD }}
           project: ${{ env.PROJECT_NAME }}
-          test_collection: "fuzz_api_DoStuff"          
+          test-collection: "fuzz_api_DoStuff"          
           report_email: ${{ env.REPORT_EMAIL }}
       - id: monitor-fuzzing
         name: Monitor Fuzzing
         uses: WillRoque/fuzzing-action/monitor-fuzzing@master
         with:
-          cognito_user: ${{ secrets.COGNITO_USER }}
-          cognito_password: ${{ secrets.COGNITO_PASSWORD }}
+          cognito-user: ${{ secrets.COGNITO_USER }}
+          cognito-password: ${{ secrets.COGNITO_PASSWORD }}
           project: ${{ env.PROJECT_NAME }}
-          test_collection_run: ${{ steps.start-fuzzing.outputs.test-collection-run }}
+          test-collection-run: ${{ steps.start-fuzzing.outputs.test-collection-run }}
           
