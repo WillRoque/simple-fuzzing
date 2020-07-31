@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - id: start-fuzzing
-        name: Start Fuzzing
+        name: Build And Start Fuzzing
         uses: CodeIntelligenceTesting/github-actions/start-fuzzing@master
         with:
           cognito_user: ${{ secrets.COGNITO_USER }}
