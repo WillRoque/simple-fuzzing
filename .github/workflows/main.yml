@@ -23,7 +23,7 @@ jobs:
           project: ${{ env.PROJECT_NAME }}
           test_collection: "fuzz_api_DoStuff"          
           report_email: ${{ env.REPORT_EMAIL }}
-          fuzzing_server_address: grpc-api-aws-cert-test.cloud.code-intelligence.com
+          fuzzing_server_address: "grpc-api-aws-cert-test.cloud.code-intelligence.com:443"
       - id: monitor-fuzzing
         name: Monitor Fuzzing
         uses: CodeIntelligenceTesting/github-actions/monitor-fuzzing@master
@@ -33,5 +33,5 @@ jobs:
           project: ${{ env.PROJECT_NAME }}
           test_collection_run: ${{ steps.start-fuzzing.outputs.test_collection_run }}
           timeout: 60
-          fuzzing_server_address: grpc-api-aws-cert-test.cloud.code-intelligence.com
+          fuzzing_server_address: "grpc-api-aws-cert-test.cloud.code-intelligence.com:443"
           
