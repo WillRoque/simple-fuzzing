@@ -23,18 +23,18 @@ jobs:
           project: ${{ env.PROJECT_NAME }}
           test_collection: "fuzz_api_DoStuff"          
           report_email: ${{ env.REPORT_EMAIL }}
-      - id: monitor-fuzzing
-        name: Monitor Fuzzing
-        uses: CodeIntelligenceTesting/github-actions/monitor-fuzzing@master
-        with:
-          cognito_user: ${{ secrets.COGNITO_USER }}
-          cognito_password: ${{ secrets.COGNITO_PASSWORD }}
-          project: ${{ env.PROJECT_NAME }}
-          test_collection: "fuzz_api_DoStuff"
-          test_collection_run: ${{ steps.start-fuzzing.outputs.test_collection_run }}
-          timeout: 60
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          pull_request_number: ${{ github.event.pull_request.number }}
-          owner: ${{ github.event.repository.owner.login }}
-          repository: ${{ github.event.repository.name }}
+#       - id: monitor-fuzzing
+#         name: Monitor Fuzzing
+#         uses: CodeIntelligenceTesting/github-actions/monitor-fuzzing@master
+#         with:
+#           cognito_user: ${{ secrets.COGNITO_USER }}
+#           cognito_password: ${{ secrets.COGNITO_PASSWORD }}
+#           project: ${{ env.PROJECT_NAME }}
+#           test_collection: "fuzz_api_DoStuff"
+#           test_collection_run: ${{ steps.start-fuzzing.outputs.test_collection_run }}
+#           timeout: 60
+#           github_token: ${{ secrets.GITHUB_TOKEN }}
+#           pull_request_number: ${{ github.event.pull_request.number }}
+#           owner: ${{ github.event.repository.owner.login }}
+#           repository: ${{ github.event.repository.name }}
           
