@@ -16,7 +16,7 @@ jobs:
     steps:
       - id: start-fuzzing
         name: Build And Start Fuzzing
-        uses: CodeIntelligenceTesting/github-actions/start-fuzzing@master
+        uses: WillRoque/fuzzing-action/start-fuzzing@master
         with:
           cognito_user: ${{ secrets.COGNITO_USER }}
           cognito_password: ${{ secrets.COGNITO_PASSWORD }}
