@@ -1,8 +1,8 @@
 name: CI
 
 on:
-#   push:
-#     branches: [ master ]
+  push:
+    branches: [ master, action-test ]
   pull_request:
     branches: [ master ]
     
@@ -23,7 +23,6 @@ jobs:
           project: ${{ env.PROJECT_NAME }}
           test_collection: "fuzz_api_DoStuff"          
           report_email: ${{ env.REPORT_EMAIL }}
-          git_branch: ${GITHUB_REF#refs/*/}
 #       - id: monitor-fuzzing
 #         name: Monitor Fuzzing
 #         uses: CodeIntelligenceTesting/github-actions/monitor-fuzzing@master
